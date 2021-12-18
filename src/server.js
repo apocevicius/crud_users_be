@@ -19,6 +19,13 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/api/get', (req, res) => {
+  const sql = "SELECT * from users"
+  db.query(sql, (err, result) => {
+    res.send(result)
+  })
+})
+
 app.post('/api/add', (req, res) => {
   const name = req.body.name;
   const age = req.body.age;
