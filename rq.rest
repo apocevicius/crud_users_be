@@ -1,0 +1,9 @@
+POST http://localhost:8000/api/add 
+Content-Type: application/json
+
+{
+"name" : "Andrew", 
+"age" : 20, 
+"email" : "and@rew.com", 
+"password" : "123456"
+}
