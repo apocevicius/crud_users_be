@@ -38,15 +38,15 @@ app.post('/api/add', (req, res) => {
   });
 });
 
-app.delete('/api/delete/:name', (req, res) => {
+app.delete('/api/delete/:id', (req, res) => {
   const name = req.params.name;
   // const age = req.body.age;
   // const email = req.body.email;
   // const password = req.body.password;
-  const deleteSql = 'DELETE FROM users WHERE name = ?';
+  const deleteSql = 'DELETE FROM users WHERE id = ?';
 
   db.query(deleteSql, name, age, email, password, (err, result) => {
-    if (err) console.log(err)
+    if (err) console.log(err);
   });
 });
 
@@ -55,12 +55,12 @@ app.put('/api/update', (req, res) => {
   const age = req.body.age;
   const email = req.body.email;
 
-  const updateSql = "UPDATE SET users name = ? WHERE email = ?"
+  const updateSql = 'UPDATE SET users name = ? WHERE email = ?';
 
   db.query(updateSql, [name, age, email], (err, result) => {
     if (err) console.log(err);
-  })
-})
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
