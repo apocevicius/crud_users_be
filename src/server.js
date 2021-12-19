@@ -67,8 +67,8 @@
 // });
 
 import express from 'express';
-import db from './db/db.js';
-import userRoutes from './routes/users';
+import db from './config/db.js';
+import userRoutes from './routes/users.js';
 import cors from 'cors';
 
 const app = express();
