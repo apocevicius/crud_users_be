@@ -1,21 +1,12 @@
-// const express = require('express');
+import express from 'express';
 
-// const router = express.Router();
+import {
+  getAllProducts,
+  
+} from '../controllers/Users.js';
 
+const router = express.Router();
 
-// //GET all users
-// router.get('/users', getUsers);
+router.get('/', getAllProducts);
 
-// //POST create user
-// router.post('/user', createUser);
-
-// //GET single user
-// // router.get('/user/:id', getUsers);
-
-// //DELETE user
-// router.delete('/users/:id', deleteUser);
-
-// //PUT update user
-// router.put('/users/:id', updateUser);
-
-// module.exports = router;
+export default router;
