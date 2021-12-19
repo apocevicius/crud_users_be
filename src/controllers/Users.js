@@ -9,6 +9,7 @@ export const getAllUsers = async (req, res) => {
   }
 };
 
+// Get user
 export const getUserById = async (req, res) => {
   try {
     const user = await User.findAll({
@@ -22,6 +23,7 @@ export const getUserById = async (req, res) => {
   }
 };
 
+// Create new user
 export const createUser = async (req, res) => {
   try {
     await User.create(req.body);
@@ -33,6 +35,7 @@ export const createUser = async (req, res) => {
   }
 };
 
+// Update user
 export const updateUser = async (req, res) => {
   try {
     await User.update(req.body, {
@@ -48,6 +51,7 @@ export const updateUser = async (req, res) => {
   }
 };
 
+// Delete user
 export const deleteUser = async (req, res) => {
   try {
     await User.destroy({
